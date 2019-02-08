@@ -28,7 +28,9 @@ class CNNLayerVisualization():
         # dict for storing the output features
         self.conv_output = {}
         # Create the folder based on the input image name to export images if not exists
-        self.output_path = img_path.split('/')[-1].split('.')[0]
+        s_a = img_path.split('/')[-1].split('.')[0] 
+        s_b = '_results'
+        self.output_path = ''.join([s_a, s_b])
         if not os.path.exists(self.output_path):
             os.mkdir(self.output_path)
         # transform the input image based on VGG requirement
